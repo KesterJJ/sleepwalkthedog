@@ -7,21 +7,12 @@ const btns = document.querySelectorAll("button");
 const container = document.getElementById("container");
 const blank = document.querySelector("#blank");
 const images = document.getElementById("images");
-const galleryImages = document.querySelectorAll("img");
 const h2 = document.querySelector("h2");
 const socials = document.getElementById("socials");
-let imgURLs = []
-for (let i = 0; i < 17; i++) {
-  imgURLs.push(`img/img\ (${i}).jpg`);
-}
 const sections = document.querySelectorAll("section");
 const section1 = document.getElementById("section1");
 aboutSection = document.getElementById("about-section");
-const options = {
-  root: null,
-  threshold: 0.2,
-  rootMargin: "0px"
-};
+const bg1 = document.getElementById("bg1");
 
 window.onload = () => {
   for (let elem of allElements) {
@@ -31,13 +22,20 @@ window.onload = () => {
 }
 
 
+
+
+
+
+const options = {
+  root: null,
+  threshold: 0.2,
+  rootMargin: "0px"
+};
 const observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) {
       return;
     }
-
-
     if (entry.target == section1) {
       logoBox.style.width = "100%";
       logoBox.style.marginTop = `${(blank.offsetHeight - logoBox.offsetHeight) / 3}px`
@@ -77,9 +75,7 @@ const observer = new IntersectionObserver(function (entries, observer) {
 
 sections.forEach(section => { observer.observe(section); });
 
-if (h2.innerHTML == "Gallery") {
-galleryImages.forEach(img => { observer.observe(img); });
-}
+
 fadeOut = () => {
   for (let elem of allElements) {
     if (elem.id == "html" || elem.id == "body" || elem.id == "container" || elem.id == "bg1" || elem.id == "gallery" || elem.id == "section1") {
@@ -143,6 +139,70 @@ openNews = () => {
 
 
 
+
+
+
+//GALLERY
+
+//GALLERY VARIABLES
+const galleryImages = document.querySelectorAll("img");
+
+let imgURLs = []
+for (let i = 0; i < 17; i++) {
+  imgURLs.push(`img/img\ (${i}).jpg`);
+}
+
+//GALLERY FUNCTIONS
+if (h2.innerHTML == "Gallery") {
+  galleryImages.forEach(img => { observer.observe(img); });
+  }
+
+
+createSlider = (width, height, pos) => {
+  const backCover = document.createElement("div");
+  const slider = document.createElement("div");
+  const leftWing = document.createElement("div");
+  const leftButton = document.createElement("div");
+  const leftTop = document.createElement("div");
+  const leftBottom = document.createElement("div");
+
+  const viewer = document.createElement("div");
+  const frame = document.createElement("div");
+  const currentImage = document.createElement("img");
+
+  const rightWing = document.createElement("div");
+  const rightButton = document.createElement("div");
+  const rightTop = document.createElement("div");
+  const rightBottom = document.createElement("div");
+
+  leftButton.appendChild(leftTop);
+  leftButton.appendChild(leftBottom);
+leftWing.appendChild(leftButton);
+slider.appendChild(leftWing);
+
+frame.appendChild(currentImage);
+viewer.appendChild(frame);
+slider.appendChild(viewer);
+
+rightButton.appendChild(rightTop);
+rightButton.appendChild(rightBottom);
+rightWing.appendChild(rightButton);
+slider.appendChild(rightWing);
+
+slider.classList.add("slider");
+slider.style.width = `${width}`;
+slider.style.height = `${height}`;
+
+backCover.appendChild(slider);
+backCover.classList.add("backCover");
+backCover.style.position = pos;
+bg1.appendChild(backCover);
+console.log(slider);
+}
+
+
+
 maxPic = (source) => {
-  console.log("check");
+  createSlider("80vw", "80vh", "fixed");
+
 }
