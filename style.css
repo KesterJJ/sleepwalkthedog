@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'Hotel Coral Essex';
-    src: url('/font/Hotel\ Coral\ Essex.ttf');
+    src: url('./font/Hotel\ Coral\ Essex.ttf');
 }
 
 * {
