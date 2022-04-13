@@ -158,7 +158,7 @@ if (h2.innerHTML == "Gallery") {
   }
 
 
-createSlider = (width, height, pos) => {
+createSlider = (width, height, pos, wingWidth, viewerWidth, frameWidth, source) => {
   const backCover = document.createElement("div");
   const slider = document.createElement("div");
   const leftWing = document.createElement("div");
@@ -189,20 +189,36 @@ rightButton.appendChild(rightBottom);
 rightWing.appendChild(rightButton);
 slider.appendChild(rightWing);
 
-slider.classList.add("slider");
-slider.style.width = `${width}`;
-slider.style.height = `${height}`;
 
 backCover.appendChild(slider);
+bg1.appendChild(backCover);
+
+currentImage.classList.add("currentImage");
+currentImage.src = source;
+
+frame.classList.add("frame");
+frame.style.width = frameWidth;
+
+viewer.classList.add("viewer");
+viewer.style.width = viewerWidth;
+
+leftWing.classList.add("wing");
+rightWing.classList.add("wing");
+
+rightWing.style.width = wingWidth;
+leftWing.style.width = wingWidth;
+
+slider.style.width = width;
+slider.style.height = height;
+
+slider.classList.add("slider");
 backCover.classList.add("backCover");
 backCover.style.position = pos;
-bg1.appendChild(backCover);
-console.log(slider);
+
 }
 
 
 
 maxPic = (source) => {
-  createSlider("80vw", "80vh", "fixed");
-
+  createSlider("80vw", "80vh", "fixed", "15%", "70%", "100%", source);
 }
