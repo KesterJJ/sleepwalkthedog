@@ -1,0 +1,494 @@
+/*ALL PAGES*/
+
+
+@font-face {
+    font-family: 'Hotel Coral Essex';
+    src: url('/font/Hotel\ Coral\ Essex.ttf');
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Hotel Coral Essex', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    transition: all 0.5s, opacity 1.5s;
+    opacity: 0;
+}
+
+
+html {
+    opacity: 1;
+}
+
+body {
+margin: 0;
+width: 100%;
+height: 100vh;
+opacity: 1;
+}
+
+p {
+    font-size: 16px;
+    text-align: center;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    opacity: 1;
+}
+
+
+.bg {
+    background-position: center top;
+    width: 100%;
+    background-size: auto 350vh;
+}
+
+
+#bg1 {
+    background-image: url("img/img\ (14).jpg");
+opacity: 1;
+}
+
+#logoBox {
+    display: flex;
+    z-index: 3;
+    position: fixed;
+    width: 20%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    left: 5px;
+    transition: font-size 0s, margin-top 0.5s, width 0.5s, opacity 1.5s;
+    top: 5px;
+    color: rgb(199,163,119);
+    cursor: pointer;
+}
+
+#logoImage {
+    width: 20vmin;
+    height: 20vmin;
+    background-image: url("img/logo-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: rgba(80, 80, 80, 0.5) 5px 5px 3px;
+}
+
+h1 {
+    font-size: 7vmin;
+    text-shadow: rgba(80, 80, 80, 0.5) 5px 5px 3px;
+}
+
+
+h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 10vmin;
+}
+
+#nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    width: 595px;
+    height: 30px;
+    float: right;
+    position: fixed;
+    z-index: 2;
+    right:17px;
+    top: 0px;
+}
+
+button {
+    background-color: transparent;
+    color: rgb(199,163,119);
+    font-size: 20px;
+    width: 85px;
+    transition: top 0.25s, left 0.5s;
+   /* position: relative;*/
+    text-shadow: rgba(50, 50, 50, 0.5) 2px 2px 1px;
+    cursor: pointer;
+    background-color: hsla(0, 0%, 0%, 0.3);
+}
+button:active {
+    background-color: hsla(0, 0%, 50%, 0.4);
+}
+
+
+footer {
+    width: 100%;
+}
+
+
+
+.instaDiv {
+    max-width: 100%;
+    height: 100%;
+    border: 1px solid blue;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*HOME PAGE*/
+
+section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+#bg2 {
+    background-image: url("img/img\ (15).jpg");
+}
+
+
+#blank {
+    height: 100vh;
+    width: 100%;
+}
+#about-section {
+    display:flex;
+    align-items: center;
+}
+#about {
+    background-color: brown;
+    text-align: center;
+    mix-blend-mode: lighten;
+    padding: 5% 20% 5% 20%;
+    color: yellow;
+    
+}
+
+
+
+.moreSection {
+    width: 99.59%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+ justify-content: space-around;
+ flex: none;
+ flex-wrap: wrap;
+}
+.splitScreen {
+    width: 48vmax;
+    height: 100%;
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .moreSection h2{
+        font-size: 10vmin;
+        color: rgb(199,163,119);
+        text-shadow: 5px 5px 3px rgba(30, 30, 30, 0.5);
+    }
+
+    .morePicContainer {
+        width: 35vmax;
+    height: 35vmax;
+    z-index: 2;
+    flex: none;
+    border: 1px solid red;
+    }
+
+    #vid-container {
+        width: 70%;
+    }
+
+    video {
+        width: 100%;
+    }
+
+    .description {
+        width: 50vmax;
+        flex: none;
+        height: 50vmax;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+#images {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    transition: transform 1s, box-shadow 1s;
+    box-shadow: 5px 5px 3px rgba(30, 30, 30, 0.5);
+    z-index: 2;
+}
+.moreButton {
+    background-color: #7f77c7;
+    padding: 10px 15px 10px 15px;
+    width: auto;
+}
+
+#images {
+    background-image: url("img/img\ (16).jpg");
+}
+
+#videos {
+    background-image: url("img/img\ (0).png");
+}
+
+#press {
+    background-image: url("img/logo.png");
+    background-size: cover;
+}
+
+figcaption {
+    float:right;
+    position: relative;
+    bottom: 10vmin;
+    z-index: -1;
+    color: #7f77c7;
+}
+
+figcaption a button {
+    width: auto;
+    padding: 4px;
+    z-index: -1;
+    color: #7f77c7;
+}
+
+#img-container:hover > #images {
+    transform: rotate3d(-2, 1, -1, 40deg);
+    box-shadow: 5px 100px 30px rgba(35, 35, 35, 0.5),  20px 200px 80px rgba(50, 50, 50, 0.5);
+    z-index: 0;
+}
+
+#news {
+    height: 100%;
+    width: 100%;
+}
+
+blockquote {
+    flex-basis: 1;
+    flex-shrink: 1;
+    width: 90px;
+}
+
+@media screen and (max-width: 1000) {
+    .moreSection {
+        flex-direction: column;
+    }
+}
+
+.pageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vmax 0;
+    opacity: 1;
+    row-gap: 20px;
+}
+
+#socials {
+    position: fixed;
+    bottom: 0%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+#socials p {
+    width: 100%;
+}
+#socials a {
+display: flex;
+align-items: center;
+}
+
+#socials img {
+    width: 8vmin;
+    opacity: 0.2;
+}
+
+
+/*ALL OTHER PAGES*/
+
+.contentDiv {
+    width: 70%;
+    row-gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+
+/*GALLERY */
+
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    row-gap: 4vmax;
+}
+
+.fixedBg {
+    background-attachment: fixed;
+}
+
+.imgBox {
+    width: 30vmax;
+    height: 30vmax;
+    box-shadow: rgba(30, 30, 30, 0.5) 7px 7px 5px;;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 100%;
+    bottom: 0px;
+    cursor: pointer;
+}
+
+.img:hover {
+    width: 110%;
+}
+
+
+
+/*GIGS*/
+
+#allGigs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#allGigs>div {
+    margin-bottom: 10vh;
+}
+
+.gigs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5vh;
+    padding: 5vh 0;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    box-shadow: rgba(30, 30, 30, 0.5) 7px 7px 5px;
+}
+
+.gig {
+    display: flex;
+    width: 98%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsla(0, 0%, 80%, 0.5);
+    box-shadow: rgba(30, 30, 30, 0.5) 7px 7px 5px;
+}
+
+.gig>button {
+    margin: 10px;
+    box-shadow: rgba(30, 30, 30, 0.5) 4px 4px 4px;
+    width: 95px;
+    background-color: #7f77c7;
+}
+
+h3 {
+    font-size: 40px;
+    color: rgb(199,163,119);
+    text-shadow: rgba(30, 30, 30, 0.5) 4px 4px 3px;
+}
+
+.gig>h4 {
+    margin: 10px;
+    text-shadow: rgba(30, 30, 30, 0.5) 4px 4px 4px;
+}
+
+
+
+
+
+
+
+/*CONTACT */
+
+#contactSocials {
+    width: 80%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    background-color: hsla(0, 0%, 100%, 0.4);
+}
+
+#contactSocials img {
+width: 20px;
+}
+#contactSocials a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    }
+
+    #formDiv {
+        background-color: hsla(0, 0%, 0%, 0.5);
+        width: 80%;
+    }
+
+form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0px;
+}
+form input {
+    width: 25vw;
+    font-size: 20px;
+    height: 25px;
+    box-shadow: rgba(30, 30, 30, 0.5) 7px 7px 5px;
+}
+
+form button {
+    background-color: #7f77c7;
+    padding: 10px;
+    box-shadow: rgba(30, 30, 30, 0.5) 7px 7px 5px;
+}
+
+#message {
+    height: 45vh;
+    width: 25vw;
+    box-shadow: rgba(30, 30, 30, 0.5) 7px 7px 5px;
+}
+
+
+
+/*NEWS*/
+
+
+#newsInstaDiv {
+    padding: 20px;
+}
