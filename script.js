@@ -70,6 +70,7 @@ const observer = new IntersectionObserver(function (entries, observer) {
         } else {
           pic.src = `${imgURLs[parseInt(pic.id[3] + pic.id[4])]}`;
         }
+        pic.addEventListener("click", () =>{ maxPic(pic.src);});
       }
   })
 }, options);
@@ -138,4 +139,10 @@ openNews = () => {
   open();
   setTimeout(() => { window.location = "/news.html"; }
     , 2000);
+}
+
+
+
+maxPic = (source) => {
+  console.log("check");
 }
