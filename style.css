@@ -415,11 +415,13 @@ border: 1px solid green;
     height: 100%;
     opacity: 1;
     border: 1px solid red;
+    text-align: center;
 }
 
 .currentImage {
     max-width: 100%;
     max-height: 100%;
+    opacity: 1;
 }
 
 .wing {

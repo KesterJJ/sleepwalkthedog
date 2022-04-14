@@ -61,7 +61,7 @@ const observer = new IntersectionObserver(function (entries, observer) {
     }
 
     
-      if (entry.target.class = "img") {
+      if (entry.target.class = "img"  && h2.innerHTML == "Gallery") {
         let pic = entry.target;
         if (pic.id.length == 4) {
           pic.src = `${imgURLs[parseInt(pic.id[3])]}`;
@@ -192,6 +192,7 @@ slider.appendChild(rightWing);
 
 backCover.appendChild(slider);
 bg1.appendChild(backCover);
+console.log(source);
 
 currentImage.classList.add("currentImage");
 currentImage.src = source;
