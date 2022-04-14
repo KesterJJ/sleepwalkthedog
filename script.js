@@ -93,47 +93,47 @@ open = () => {
 
 openGallery = () => {
   open();
-  setTimeout(() => { window.location = "/gallery.html"; }
+  setTimeout(() => { window.location = "./gallery.html"; }
     , 2000);
 }
 
 openHome = () => {
   open();
-  setTimeout(() => { window.location = "/index.html"; }
+  setTimeout(() => { window.location = "./index.html"; }
     , 2000);
 }
 openAbout = () => {
   open();
-  setTimeout(() => { window.location = "/about.html"; }
+  setTimeout(() => { window.location = "./about.html"; }
     , 2000);
 }
 openContact = () => {
   open();
-  setTimeout(() => { window.location = "/contact.html"; }
+  setTimeout(() => { window.location = "./contact.html"; }
     , 2000);
 }
 
 openGigs = () => {
   open();
-  setTimeout(() => { window.location = "/gigs.html"; }
+  setTimeout(() => { window.location = "./gigs.html"; }
     , 2000);
 }
 
 openMusic = () => {
   open();
-  setTimeout(() => { window.location = "/music.html"; }
+  setTimeout(() => { window.location = "./music.html"; }
     , 2000);
 }
 
 openShop = () => {
   open();
-  setTimeout(() => { window.location = "/shop.html"; }
+  setTimeout(() => { window.location = "./shop.html"; }
     , 2000);
 }
 
 openNews = () => {
   open();
-  setTimeout(() => { window.location = "/news.html"; }
+  setTimeout(() => { window.location = "./news.html"; }
     , 2000);
 }
 
