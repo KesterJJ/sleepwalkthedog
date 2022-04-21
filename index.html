@@ -59,10 +59,12 @@
                 </div>
             </section>
             <section id="section3">
-               <div id="soundCloud">
-                    <iframe width="100%" height="60" scrolling="no" frameborder="no" allow="autoplay"
+                <div id="soundCloud">
+                    <button class="moreButton" onclick="openMusic()">More music...</button>
+                    <iframe width="300px" height="60" scrolling="no" frameborder="no" allow="autoplay"
+                        class="musicPlayer"
                         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/805270936&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-                    </div>
+                </div>
             </section>
         </div>
 
@@ -201,7 +203,9 @@
                                 <script async src="//www.instagram.com/embed.js"></script>
                             </div>
                         </div>
-                        <figcaption><a href="press.html"><button>More press cover...</button></a></figcaption>
+                        <figcaption id="newsCaption">
+                            <button onclick="openNews()">More press cover...</button>
+                        </figcaption>
                     </figure>
                 </div>
             </section>

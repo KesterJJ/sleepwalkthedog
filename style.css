@@ -202,10 +202,13 @@ section {
 }
 
 #soundCloud {
-    width: 30%;
+    width: 300px;
     height: 60px;
-    position: sticky;
+    position: relative;
     bottom: 0%;
+}
+#soundCloud:hover {
+    width: 430px;
 }
 
   .moreSection h2{
@@ -253,6 +256,16 @@ section {
     width: auto;
 }
 
+.musicButton {
+    position: absolute;
+    left: 0%;
+    z-index: -1;
+}
+.musicPlayer {
+    position: absolute;
+    right: 0%;
+}
+
 #images {
     background-image: url("img/img\ (0).jpg");
 }
@@ -282,6 +295,21 @@ figcaption a button {
 #news {
     height: 100%;
     width: 100%;
+}
+
+#news-container {
+    position: relative;
+}
+
+#news-container:hover>#news {
+    transform: rotate3d(2, -1, -2, -40deg);
+    box-shadow: 100px 100px 30px rgba(35, 35, 35, 0.5),  200px 200px 80px rgba(50, 50, 50, 0.5);
+    z-index: 0;
+}
+#newsCaption {
+    left: 0%;
+    position: absolute;
+    bottom: 0%;
 }
 
 blockquote {
