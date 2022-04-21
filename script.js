@@ -14,14 +14,14 @@ const section1 = document.getElementById("section1");
 aboutSection = document.getElementById("about-section");
 const bg1 = document.getElementById("bg1");
 
+let currentNo;
+
 window.onload = () => {
   for (let elem of allElements) {
     elem.style.opacity = "1";
   }
   socials.style.opacity = "0.5";
 }
-
-
 
 
 
@@ -44,7 +44,7 @@ const observer = new IntersectionObserver(function (entries, observer) {
       heading.style.textShadow = "rgba(150, 150, 150, 0.5) 10px 10px 7px";
       logoImage.style.width = "20vmax";
       logoImage.style.height = "20vmax";
-      logoImage.style.boxShadow = "rgba(150, 150, 150, 0.5) 10px 10px 7px"; 
+      logoImage.style.boxShadow = "rgba(150, 150, 150, 0.5) 10px 10px 7px";
     }
     if (entry.target == aboutSection) {
       logoBox.style.width = "20%";
@@ -60,16 +60,18 @@ const observer = new IntersectionObserver(function (entries, observer) {
       nav.style.width = "85px"
     }
 
-    
-      if (entry.target.class = "img"  && h2.innerHTML == "Gallery") {
-        let pic = entry.target;
-        if (pic.id.length == 4) {
-          pic.src = `${imgURLs[parseInt(pic.id[3])]}`;
-        } else {
-          pic.src = `${imgURLs[parseInt(pic.id[3] + pic.id[4])]}`;
-        }
-        pic.addEventListener("click", () =>{ maxPic(pic.src);});
+
+    if (h2.innerHTML == "Gallery") {
+      let pic = entry.target;
+      let picNo;
+      if (pic.id.length == 4) {
+        picNo = parseInt(pic.id[3]);
+        pic.src = `${imgURLs[picNo]}`;
+      } else {
+        picNo = parseInt(pic.id[3] + pic.id[4]);
+        pic.src = `${imgURLs[picNo]}`;
       }
+    }
   })
 }, options);
 
@@ -145,81 +147,236 @@ openNews = () => {
 //GALLERY
 
 //GALLERY VARIABLES
-const galleryImages = document.querySelectorAll("img");
+const galleryImages = document.querySelectorAll(".img");
 
 let imgURLs = []
-for (let i = 0; i < 17; i++) {
+for (let i = 0; i < 16; i++) {
   imgURLs.push(`img/img\ (${i}).jpg`);
 }
 
 //GALLERY FUNCTIONS
 if (h2.innerHTML == "Gallery") {
   galleryImages.forEach(img => { observer.observe(img); });
+}
+
+galleryImages.forEach(img => {
+  let imgNo;
+  if (img.id.length == 4) {
+    imgNo = parseInt(img.id[3]);
+  } else {
+    imgNo = parseInt(img.id[3] + img.id[4]);
   }
+  img.addEventListener("click", () => { maxPic(imgNo); });
+  console.log(imgNo);
+
+})
+
+const backCover = document.createElement("div");
+const slider = document.createElement("div");
+const leftWing = document.createElement("div");
+const leftButton = document.createElement("div");
+const leftTop = document.createElement("div");
+const leftBottom = document.createElement("div");
+
+const sliderImages = [];
+const viewer = document.createElement("div");
+
+const rightWing = document.createElement("div");
+const rightButton = document.createElement("div");
+const rightTop = document.createElement("div");
+const rightBottom = document.createElement("div");
+
+const crossBox = document.createElement("div");
+const cross1 = document.createElement("div");
+const cross2 = document.createElement("div");
 
 
-createSlider = (width, height, pos, wingWidth, viewerWidth, frameWidth, source) => {
-  const backCover = document.createElement("div");
-  const slider = document.createElement("div");
-  const leftWing = document.createElement("div");
-  const leftButton = document.createElement("div");
-  const leftTop = document.createElement("div");
-  const leftBottom = document.createElement("div");
 
-  const viewer = document.createElement("div");
-  const frame = document.createElement("div");
-  const currentImage = document.createElement("img");
-
-  const rightWing = document.createElement("div");
-  const rightButton = document.createElement("div");
-  const rightTop = document.createElement("div");
-  const rightBottom = document.createElement("div");
-
+assembleSlider = () => {
   leftButton.appendChild(leftTop);
   leftButton.appendChild(leftBottom);
-leftWing.appendChild(leftButton);
-slider.appendChild(leftWing);
+  leftWing.appendChild(leftButton);
 
-frame.appendChild(currentImage);
-viewer.appendChild(frame);
-slider.appendChild(viewer);
+  rightButton.appendChild(rightTop);
+  rightButton.appendChild(rightBottom);
+  rightWing.appendChild(crossBox);
+  rightWing.appendChild(rightButton);
+  crossBox.appendChild(cross1);
+  crossBox.appendChild(cross2);
 
-rightButton.appendChild(rightTop);
-rightButton.appendChild(rightBottom);
-rightWing.appendChild(rightButton);
-slider.appendChild(rightWing);
+  slider.appendChild(leftWing);
+  slider.appendChild(viewer);
+  slider.appendChild(rightWing);
+
+  backCover.appendChild(slider);
+  bg1.appendChild(backCover);
+}
 
 
-backCover.appendChild(slider);
-bg1.appendChild(backCover);
-console.log(source);
+createCurrentImage = (frameWidth) => {
+  console.log(currentNo);
+  let frame = document.createElement("div");
+  let image = document.createElement("img");
+  image.src = imgURLs[currentNo];
+  image.classList.add("sliderImage");
+  frame.classList.add("frame");
+  frame.appendChild(image);
+  frame.style.width = frameWidth;
+  viewer.appendChild(frame);
+}
 
-currentImage.classList.add("currentImage");
-currentImage.src = source;
+createPreviousImage = (frameWidth) => {
+  let frame = document.createElement("div");
+  let image = document.createElement("img");
+  if (currentNo == 0) {
+    image.src = imgURLs[15];
+  } else {
+    image.src = imgURLs[currentNo - 1];
+  }
+  image.classList.add("sliderImage");
+  frame.classList.add("frame");
+  frame.appendChild(image);
+  frame.style.width = frameWidth;
+  viewer.prepend(frame);
+}
 
-frame.classList.add("frame");
-frame.style.width = frameWidth;
+createNextImage = (frameWidth) => {
+  let frame = document.createElement("div");
+  let image = document.createElement("img");
+  if (currentNo == 15) {
+    image.src = imgURLs[0];
+  } else {
+    image.src = imgURLs[currentNo + 1];
+  }
+  
+  image.classList.add("sliderImage");
+  frame.classList.add("frame");
+  frame.appendChild(image);
+  frame.style.width = frameWidth;
+  viewer.append(frame);
+}
 
-viewer.classList.add("viewer");
-viewer.style.width = viewerWidth;
 
-leftWing.classList.add("wing");
-rightWing.classList.add("wing");
 
-rightWing.style.width = wingWidth;
-leftWing.style.width = wingWidth;
+styleSlider = (width, height, pos, wingWidth, viewerWidth, frameWidth, imgNo) => {
 
-slider.style.width = width;
-slider.style.height = height;
+  createPreviousImage(frameWidth);
+  createCurrentImage(frameWidth);
+  createNextImage(frameWidth);
 
-slider.classList.add("slider");
-backCover.classList.add("backCover");
-backCover.style.position = pos;
+  viewer.classList.add("viewer");
+  viewer.style.width = viewerWidth;
+
+  leftTop.classList.add("leftTop");
+  leftTop.classList.add("arrowLine");
+  leftBottom.classList.add("leftBottom");
+  leftBottom.classList.add("arrowLine");
+  rightTop.classList.add("rightTop");
+  rightTop.classList.add("arrowLine");
+  rightBottom.classList.add("rightBottom");
+  rightBottom.classList.add("arrowLine");
+
+  cross1.classList.add("cross1");
+  cross2.classList.add("cross2");
+  crossBox.classList.add("crossBox");
+
+
+  leftButton.classList.add("sliderButton");
+  rightButton.classList.add("sliderButton");
+
+  leftWing.classList.add("wing");
+  rightWing.classList.add("wing");
+
+  rightWing.style.width = wingWidth;
+  leftWing.style.width = wingWidth;
+
+  slider.style.width = width;
+  slider.style.height = height;
+
+  slider.classList.add("slider");
+  backCover.classList.add("backCover");
+  backCover.style.position = pos;
+}
+
+
+
+
+createSlider = (width, height, pos, wingWidth, viewerWidth, frameWidth, imgNo) => {
+
+  assembleSlider();
+  styleSlider(width, height, pos, wingWidth, viewerWidth, frameWidth, imgNo);
+
+  viewer.scrollLeft = viewer.offsetWidth;
+
+  crossBox.addEventListener("click", closePic);
+
+
+  leftButton.addEventListener("click", previous);
+  rightButton.addEventListener("click", next);
+}
+
+
+
+
+
+
+
+
+previous = () => {
+  if (currentNo == 0) {
+    currentNo = 15;
+  } else {
+    currentNo--;
+  }
+  viewer.style.scrollBehavior = "smooth";
+  viewer.scrollBy((viewer.offsetWidth * -1), 0);
+
+  setTimeout(function () {
+    createPreviousImage("100%");
+    viewer.removeChild(viewer.lastChild);
+    viewer.style.scrollBehavior = "auto";
+    viewer.scrollLeft = viewer.offsetWidth;
+  }, 500);
+}
+
+next = () => {
+  if (currentNo == 15) {
+    currentNo = 0;
+  } else {
+    currentNo++;
+  }
+  
+  viewer.style.scrollBehavior = "smooth";
+  viewer.scrollBy((viewer.offsetWidth), 0);
+
+  setTimeout(function () {
+    createNextImage("100%");
+    viewer.removeChild(viewer.firstChild);
+    viewer.style.scrollBehavior = "auto";
+    viewer.scrollLeft = viewer.offsetWidth;
+  }, 500);
+
+}
+
+closePic = () => {
+  while (viewer.hasChildNodes()) {
+    viewer.removeChild(viewer.firstChild);
+  }
+  crossBox.removeEventListener("click", closePic);
+
+  leftButton.removeEventListener("click", previous);
+  rightButton.removeEventListener("click", next);
+  backCover.remove();
 
 }
 
 
 
-maxPic = (source) => {
-  createSlider("80vw", "80vh", "fixed", "15%", "70%", "100%", source);
+
+
+
+maxPic = (number) => {
+  currentNo = number;
+  console.log(currentNo);
+  createSlider("80vw", "80vh", "fixed", "15%", "70%", "100%", 3);
 }
