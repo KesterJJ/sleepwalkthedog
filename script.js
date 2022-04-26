@@ -151,7 +151,7 @@ const galleryImages = document.querySelectorAll(".img");
 
 let imgURLs = []
 for (let i = 0; i < 16; i++) {
-  imgURLs.push(`img/img\ (${i}).jpg`);
+  imgURLs.push(`img/img\ (${i})-min.jpg`);
 }
 
 //GALLERY FUNCTIONS
