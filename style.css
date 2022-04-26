@@ -288,7 +288,7 @@ figcaption a button {
 
 #img-container:hover > #images {
     transform: rotate3d(-2, 1, -1, 40deg);
-    box-shadow: 5px 100px 30px rgba(35, 35, 35, 0.5),  20px 200px 80px rgba(50, 50, 50, 0.5);
+    box-shadow: 5px 100px 30px rgba(35, 35, 35, 0.3),  20px 200px 80px rgba(50, 50, 50, 0.3);
     z-index: 0;
 }
 
@@ -303,7 +303,7 @@ figcaption a button {
 
 #news-container:hover>#news {
     transform: rotate3d(2, -1, -2, -40deg);
-    box-shadow: 100px 100px 30px rgba(35, 35, 35, 0.5),  200px 200px 80px rgba(50, 50, 50, 0.5);
+    box-shadow: 100px 100px 30px rgba(35, 35, 35, 0.3),  200px 200px 80px rgba(50, 50, 50, 0.3);
     z-index: 0;
 }
 #newsCaption {
