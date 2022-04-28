@@ -1,5 +1,7 @@
 /*ALL PAGES*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&display=swap');
 
 @font-face {
     font-family: 'Hotel Coral Essex';
@@ -9,7 +11,7 @@
 * {
     padding: 0px;
     margin: 0px;
-    font-family: 'Hotel Coral Essex', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Asgkar', 'Montserrat', 'Hotel Coral Essex', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: normal;
     transition: all 0.5s, opacity 1.5s;
     opacity: 0;
@@ -58,7 +60,7 @@ opacity: 1;
     display: flex;
     z-index: 3;
     position: fixed;
-    width: 25%;
+    width: 30%;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -70,6 +72,7 @@ opacity: 1;
 }
 
 #logoImage {
+    flex: none;
     width: 20vmin;
     height: 20vmin;
     background-image: url("img/logo-removebg-preview.png");
@@ -82,6 +85,7 @@ opacity: 1;
 
 h1 {
     font-size: 7vmin;
+    font-weight: 700;
     text-shadow: rgba(80, 80, 80, 0.5) 5px 5px 3px;
 }
 
@@ -168,13 +172,41 @@ section {
     width: 100%;
 }
 
+
+#aboutDiv {
+position: relative;
+width: 100%;
+height: 60vh;
+}
+
 #about {
-    background-color: brown;
-    text-align: center;
-    mix-blend-mode: lighten;
-    padding: 5% 20% 5% 20%;
-    color: yellow;
-    
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    color: #c0c49e;
+    text-shadow: black 1px 1px 1px;
+    z-index: 3;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#about>p {
+    width: 80%;
+}
+
+#aboutBg {
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(#5d221a, #d44134, #984059);
+    opacity: 0;
+    z-index: 2;
+    top: 0%;
+    bottom: 0%;
 }
 
 
@@ -205,7 +237,7 @@ section {
     bottom: 0%;
 }
 #soundCloud:hover {
-    width: 430px;
+    width: 450px;
 }
 
   .moreSection h2{
@@ -293,8 +325,8 @@ figcaption a button {
 
 
 #aboutButton {
-    border: yellow solid 2px;
-    color: yellow;
+    border: rgb(199,163,119) solid 2px;
+    color: rgb(199,163,119);
     background-color: hsla(0, 0%, 100%, 0.4);
 }
 
@@ -365,7 +397,6 @@ align-items: center;
 
 #socials img {
     width: 8vmin;
-    opacity: 0.2;
 }
 
 

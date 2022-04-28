@@ -13,14 +13,15 @@ const sections = document.querySelectorAll("section");
 const section1 = document.getElementById("section1");
 aboutSection = document.getElementById("about-section");
 const bg1 = document.getElementById("bg1");
-
+const aboutBg = document.getElementById("aboutBg");
 let currentNo;
 
 window.onload = () => {
   for (let elem of allElements) {
     elem.style.opacity = "1";
   }
-  socials.style.opacity = "0.5";
+  socials.style.opacity = "0.7";
+  aboutBg.style.opacity = "0.5";
 }
 
 
@@ -44,21 +45,23 @@ const observer = new IntersectionObserver(function (entries, observer) {
       heading.style.textShadow = "rgba(150, 150, 150, 0.5) 10px 10px 7px";
       logoImage.style.width = "20vmax";
       logoImage.style.height = "20vmax";
+      logoImage.style.borderRadius = "10vmax";
       logoImage.style.boxShadow = "rgba(150, 150, 150, 0.5) 10px 10px 7px";
     }
     if (entry.target == aboutSection) {
-      logoBox.style.width = "20%";
+      logoBox.style.width = "30%";
       logoBox.style.marginTop = "0px";
       heading.style.fontSize = "7vmin";
       heading.style.textShadow = "rgba(80, 80, 80, 0.5) 5px 5px 3px";
       logoBox.style.pointerEvents = "all";
-      logoImage.style.width = "40vmin";
+      logoImage.style.width = "20vmin";
       logoImage.style.height = "20vmin";
+      logoImage.style.borderRadius = "10vmin";
       logoImage.style.boxShadow = "rgba(80, 80, 80, 0.5) 5px 5px 3px";
-      nav.style.width = "595px";
-    } if (entry.target == sections[2]) {
-      nav.style.width = "85px"
-    }
+    //  nav.style.width = "595px";
+    }// if (entry.target == sections[2]) {
+     // nav.style.width = "85px"
+   // }
 
 
     if (h2.innerHTML == "Gallery") {
