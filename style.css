@@ -196,6 +196,7 @@ height: 60vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }
 #about>p {
     width: 80%;
