@@ -103,7 +103,7 @@ h2 {
     flex-direction: row;
     justify-content: flex-end;
     flex-wrap: wrap;
-    width: 595px;
+    width: 85px;
     max-width: 70%;
     height: 30px;
     float: right;
@@ -149,6 +149,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 /*HOME PAGE*/
@@ -395,11 +396,38 @@ blockquote {
 #socials a {
 display: flex;
 align-items: center;
+width: 8vmin;
+height: 8vmin;
+background-size: cover;
+background-position: center center;
 }
 
-#socials img {
-    width: 8vmin;
+.instaLogo {
+background-image: url("img/107138_gray_circle_instagram_icon.png");
 }
+.facebookLogo {
+    background-image: url("img/107140_gray_circle_facebook_icon.png");
+}
+.youtubeLogo {
+    background-image: url("img/youtube-gray.png");
+}
+.bandcampLogo {
+    background-image: url("img/bandcamp-gray.png");
+}
+.soundcloudLogo {
+    background-image: url("img/soundcloud-gray.png");
+}
+.twitterLogo {
+    background-image: url("img/107135_gray_twitter_circle_icon.png");
+}
+.emailLogo {
+    background-image: url("img/email-gray.png");
+    display: flex;
+}
+.spotifyLogo {
+    background-image: url("img/spotify-gray.png");
+}
+
 
 
 /*ALL OTHER PAGES*/
@@ -694,3 +722,13 @@ form button {
 #newsInstaDiv {
     padding: 20px;
 }
+
+#curator-feed-default-feed-layout {
+    opacity: 1;
+    max-height: 100%;
+}
+
+.instaDiv div, .instaDiv article,.instaDiv span, .instaDiv i, .instaDiv svg, .instaDiv img, .instaDiv path, .instaDiv a, .instaDiv button {
+    opacity: 1;
+}
+

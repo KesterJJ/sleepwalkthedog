@@ -14,6 +14,8 @@ const section1 = document.getElementById("section1");
 aboutSection = document.getElementById("about-section");
 const bg1 = document.getElementById("bg1");
 const aboutBg = document.getElementById("aboutBg");
+const insta = document.getElementById("curator-feed-default-feed-layout");
+const instaLink = document.getElementById("instaLink");
 let currentNo;
 
 window.onload = () => {
@@ -22,6 +24,8 @@ window.onload = () => {
   }
   socials.style.opacity = "0.7";
   aboutBg.style.opacity = "0.5";
+  insta.style.opacity = "1";
+  instaLink.style.opacity = "1";
 }
 
 
@@ -383,3 +387,12 @@ maxPic = (number) => {
   console.log(currentNo);
   createSlider("80vw", "80vh", "fixed", "15%", "70%", "100%", 3);
 }
+
+
+
+
+(function () {
+  var i, e, d = document, s = "script"; i = d.createElement("script"); i.async = 1; i.charset = "UTF-8";
+  i.src = "https://cdn.curator.io/published/ba0bb76f-78b1-47a9-82a5-c478b4da0ca7.js";
+  e = d.getElementsByTagName(s)[0]; e.parentNode.insertBefore(i, e);
+})();
