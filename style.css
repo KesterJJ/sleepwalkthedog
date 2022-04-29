@@ -94,6 +94,8 @@ h2 {
     width: 100%;
     text-align: center;
     font-size: 10vmin;
+    color: rgb(199,163,119);
+    text-shadow: rgba(80, 80, 80, 0.5) 3px 3px 2px;
 }
 
 #nav {
